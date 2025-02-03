@@ -12,8 +12,6 @@ def main():
   currentHour = (now.hour - 6) % 24
   currentMinute = now.minute
 
-  print (currentHour, currentMinute) #this is just for checking, we should delete it later
-
   #TODO:
   #Ask user for hours
   hours = input("How many hours? ")
@@ -26,14 +24,19 @@ def main():
 
   #Do not use any if statements in calculating the time.
   futureMinute = currentMinute + minutes
-  futureHour = currentHour + hours + (futureMinute//60)
+  futureHour = currentHour + hours + (futureMinute // 60)
  
 # make sure not to forget additional hours from minutes
   futureMinute = futureMinute % 60
   futureHour = futureHour % 24
 
-  print("Future Time:",futureHour,":", futureMinute)
-  #Output the future time in standard format "HH:MM"
+  futureHour1 = futureHour // 10
+  futureHour2 = futureHour % 10
+  futureMinute1 = futureMinute // 10
+  futureMinute2 = futureMinute % 10
+
+  print("Future Time: " + str(futureHour1) + str(futureHour2) + ":" + str(futureMinute1) + str(futureMinute2))
+  #Output the future time in standard format "HH:MM" my single digits dont have a zero in front
 
 if __name__ == '__main__':
   main()
